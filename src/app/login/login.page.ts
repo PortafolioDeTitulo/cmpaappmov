@@ -8,7 +8,7 @@ import { IonContent, IonHeader, IonTitle, IonToolbar,
 } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
-import { logInOutline } from 'ionicons/icons';
+import { logInOutline, atSharp, lockClosed } from 'ionicons/icons';
 
 @Component({
   selector: 'app-login',
@@ -29,7 +29,7 @@ export class LoginPage implements OnInit {
   constructor(
     private router: Router,
     private authService: AutentificacionUsuario
-  ) { addIcons({logInOutline})}
+  ) { addIcons({atSharp,lockClosed,logInOutline});}
 
   async login() {
     try {

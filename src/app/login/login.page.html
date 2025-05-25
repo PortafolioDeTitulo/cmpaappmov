@@ -1,33 +1,41 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title class="text-center">
-      <img src="assets/img/Logo 2024 - Firma_azul 1.PNG" alt="Logo Corporación Municipal" class="corporacion-image">
-    </ion-title>
-  </ion-toolbar>
+ 
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding login-content">
-  <div class="login-container">
+  <!-- Contenedor principal para agrupar todos los elementos -->
+  <div class="login-wrapper">
+    <!-- Logo de la Corporación Municipal -->
+    <img src="assets/img/Logo 2024 - Firma_azul 1.PNG" alt="Logo Corporación Municipal" class="corporacion-image">
+
+    <!-- Imagen decorativa del auto -->
     <img src="assets/img/auto_centro.png" alt="Auto" class="auto-image mb-3">
 
+    <!-- Lista de inputs del formulario de login -->
     <ion-list class="ion-text-center login-list">
+      <!-- Input para el correo electrónico -->
       <ion-item class="ion-margin-bottom login-item">
         <ion-icon src="assets/icon/at-sharp.svg" class="icono-izquierda" slot="start" name="at-sharp" aria-hidden="true" color="primary"></ion-icon>
         <ion-input type="email" label="Ingrese su Correo" placeholder="nombre.apellido@cmpuentealto.cl" label-placement="floating" fill="outline"></ion-input>
       </ion-item>
 
+      <!-- Input para la contraseña -->
       <ion-item class="ion-margin-bottom login-item">
         <ion-icon src="assets/icon/lock-closed.svg" class="icono-izquierda" slot="start" name="lock-closed" aria-hidden="true" color="primary"></ion-icon>
         <ion-input type="password" label="Ingrese su Contraseña" label-placement="floating" fill="outline" placeholder="Ingrese su Contraseña"></ion-input>
       </ion-item>
 
+      <!-- Botón para recuperar la contraseña -->
       <ion-item class="ion-margin-bottom login-item" lines="none">
         <ion-button fill="clear" class="forgot-btn" (click)="goToRecuperarContrasenaPage()">¿Olvidó su Contraseña?</ion-button>
       </ion-item>
     </ion-list>
 
+    <!-- Contenedor de botones de acción -->
     <div class="button-container mt-3">
+      <!-- Botón para ir a la página de inicio -->
       <ion-button expand="block" shape="round" fill="outline" (click)="goToHomePage()">Inicio</ion-button>
+      <!-- Botón para ir a la página de registro de usuario -->
       <ion-button expand="block" shape="round" fill="outline" (click)="goToRegistroUsuarioPage()">Registro Usuario</ion-button>
     </div>
   </div>

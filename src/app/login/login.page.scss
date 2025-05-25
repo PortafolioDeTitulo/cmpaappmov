@@ -1,127 +1,60 @@
-.logo-image {
-  max-height: 150px;
-  width: auto;
-  object-fit: contain;
-  margin: 0 auto;
-}
-
-.large-icon {
-  width: 40px;
-  height: 40px;
-  color: #007bff;
-}
-
-.auto-image {
-  max-width: 100%; /* O un valor específico en píxeles como 500px */
-  height: auto;
-  object-fit: contain;
-  display: block; /* Evita un pequeño espacio debajo de la imagen */
-  margin: 0 auto; /* Centra la imagen horizontalmente */
-}
-.text-center {
-  text-align: center;
-}
-
-.logo-image {
-  max-width: 100%;
-  height: auto;
-}
-
-.auto-image {
-  max-width: 100%;
-  height: auto;
-}
-
-.large-icon {
-  font-size: 24px;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.login-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #232323;
-}
-
-.login-container {
-  background: #fff;
-  padding: 3.5rem 3rem;
-  border-radius: 22px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+// Contenedor principal que agrupa todos los elementos
+.login-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  max-width: 480px;
-  margin: auto;
+  justify-content: center;
+  max-width: 480px; // Ancho máximo para pantallas grandes
+  margin: 0 auto; // Centrado horizontal
+  padding: 2rem; // Espaciado interno
+  background: #fff; // Fondo blanco
+  border-radius: 16px; // Bordes redondeados
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); // Sombra para destacar el contenedor
 }
 
-.logo-image {
-  max-width: 180px;
-  margin-bottom: 2rem;
-}
-
-.auto-image {
-  max-width: 140px;
-  margin-bottom: 2rem;
-}
-
-.login-list {
-  width: 100%;
-}
-
-.login-item {
-  border-radius: 14px;
-  margin-bottom: 1.5rem;
-  background: #f6faff;
-  font-size: 1.15rem;
-}
-
-ion-input {
-  --padding-start: 16px;
-  font-size: 1.1rem;
-  min-height: 48px;
-}
-
-ion-icon.icono-izquierda {
-  font-size: 1.6rem;
-}
-
-.button-container ion-button {
-  margin-top: 1rem;
-  font-size: 1.1rem;
-  height: 48px;
-  --border-radius: 24px;
-}
-
-.forgot-btn {
-  font-size: 1rem;
-  color: #3880ff;
-  margin: 0 auto;
-}
-
+// Imagen del logo de la Corporación Municipal
 .corporacion-image {
-  display: block;
-  max-width: 200px; /* Ajusta el tamaño máximo */
+  max-width: 400px; /* Ajusta el tamaño máximo */
   height: auto;
   margin: 0 auto 1.5rem; /* Centra horizontalmente y agrega margen inferior */
   object-fit: contain; /* Asegura que la imagen mantenga sus proporciones */
+  align-items: center;
 }
 
+// Imagen decorativa del auto
+.auto-image {
+  max-width: 140px; // Tamaño máximo
+  height: auto;
+  margin-bottom: 2rem; // Separación inferior
+}
+
+// Lista de inputs del formulario
+.login-list {
+  width: 100%; // Ocupa todo el ancho del contenedor
+}
+
+// Estilo para cada input del formulario
+.login-item {
+  border-radius: 12px; // Bordes redondeados
+  margin-bottom: 1.5rem; // Separación entre inputs
+  background: #f6faff; // Fondo claro
+}
+
+// Botones de acción
+.button-container ion-button {
+  margin-top: 1rem; // Separación entre botones
+  font-size: 1.1rem; // Tamaño de fuente
+  height: 48px; // Altura del botón
+  --border-radius: 24px; // Bordes redondeados
+}
+
+// Estilo responsive para pantallas pequeñas
 @media (max-width: 600px) {
-  .login-container {
-    max-width: 95vw;
-    padding: 2rem 0.5rem;
+  .login-wrapper {
+    max-width: 95%; // Reduce el ancho en pantallas pequeñas
+    padding: 1.5rem; // Reduce el padding
   }
-  .logo-image, .auto-image {
-    max-width: 100px;
+  .corporacion-image, .auto-image {
+    max-width: 120px; // Reduce el tamaño de las imágenes
   }
 }
