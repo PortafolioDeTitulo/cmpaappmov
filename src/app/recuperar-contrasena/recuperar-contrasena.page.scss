@@ -33,12 +33,22 @@
   margin-bottom: 24px;
 }
 
-.email-input-container {
-  max-width: 420px;
+.email-input-container,
+ion-item.email-input-container,
+ion-item.email-input-container .item-native,
+ion-item.email-input-container .input-wrapper {
+  width: 90% !important;
+  max-width: 800px !important;
   margin: 0 auto;
-  width: 100%;
-  font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
-  --min-height: 64px;
+  --min-height: 90px;
+  --padding-start: 0px;
+  --inner-padding-end: 0px;
+  --highlight-height: 2px;
+  --border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 ion-input, ion-label, input {
@@ -47,10 +57,32 @@ ion-input, ion-label, input {
 }
 
 ion-item.email-input-container {
+  width: 100% !important;
+  max-width: 700px !important;
+  margin: 0 auto;
+  --min-height: 90px;
   --padding-start: 0px;
   --inner-padding-end: 0px;
   --highlight-height: 2px;
-  --border-radius: 12px;
+  --border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+}
+
+ion-input {
+  width: 100%;
+  font-size: 1.05rem;
+  min-height: 70px;
+  box-sizing: border-box;
+  word-break: break-all;
+  background: transparent;
+  text-align: center;
+}
+
+ion-item.email-input-container .input-wrapper {
+  width: 100% !important;
 }
 
 ion-input .label-floating.sc-ion-input-md, ion-input .label-floating.sc-ion-input-ios {
@@ -67,122 +99,134 @@ ion-input .label-floating.sc-ion-input-md, ion-input .label-floating.sc-ion-inpu
   position: relative;
 }
 
+// Fondo general de la página
 .card-bg {
   background: #f7f9fb;
 }
 
+// Card principal centrada y con sombra
 .recover-card {
-  max-width: 420px;
-  margin: 48px auto;
+  max-width: 800px;
+  margin: 56px auto;
   background: #fff;
-  border-radius: 16px;
+  border-radius: 20px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  padding: 32px 24px 24px 24px;
+  padding: 40px 16px 32px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 95vw;
+  width: 98vw;
   min-width: 0;
 }
 
+// Logo
 .logo-center {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 18px;
+  margin-bottom: 24px;
 }
-
 .auto-image {
-  max-width: 180px;
+  max-width: 220px;
   width: 100%;
   height: auto;
   display: block;
 }
 
+// Título principal
 .title {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 500;
-  margin-bottom: 22px;
+  margin-bottom: 28px;
   color: #222;
   font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
-.email-input-container {
+// Input de correo y su contenedor
+ion-item.email-input-container {
   width: 100%;
-  margin-bottom: 18px;
-  border-radius: 12px;
-  --background: #f5f7fa;
-  --min-height: 64px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-  padding: 0 8px;
+  max-width: 700px;
+  margin: 0 auto 22px auto;
+  --min-height: 90px;
+  --padding-start: 0px;
+  --inner-padding-end: 0px;
+  --highlight-height: 2px;
+  --border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background: #f5f7fa;
 }
-
+ion-input {
+  width: 100%;
+  font-size: 1.05rem;
+  min-height: 70px;
+  box-sizing: border-box;
+  word-break: break-all;
+  background: transparent;
+  text-align: center;
+}
 .minimal-input ion-label.center-label {
   width: 100%;
   text-align: center;
-  left: 0 !important;
-  right: 0 !important;
-  margin: 0 auto;
-  font-size: 1.15rem;
+  font-size: 1.5rem;
   color: #1976d2 !important;
   font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
 }
 
-ion-input, ion-label, input {
-  font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
-}
-
-ion-input {
-  text-align: center;
-  font-size: 1.15rem;
-  min-height: 48px;
-  padding: 12px 0;
-}
-
+// Botón principal
 .main-btn {
-  width: 100%;
-  margin-bottom: 16px;
-  font-size: 1.15rem;
+  width: 300px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 0.5px;
-  min-height: 48px;
+  min-height: 52px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+// Botón secundario (Inicio)
 .secondary-btn {
   width: 100%;
-  margin-top: 18px;
-  font-size: 1.05rem;
-  min-height: 44px;
+  margin-top: 22px;
+  font-size: 1.1rem;
+  min-height: 46px;
 }
 
+// Texto informativo
 .info-text {
   text-align: center;
   color: #555;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   margin-bottom: 8px;
-  margin-top: 18px;
+  margin-top: 22px;
 }
 
+// Responsividad para móviles
 @media (max-width: 600px) {
   .recover-card {
-    max-width: 98vw;
-    padding: 18px 4vw 18px 4vw;
+    max-width: 99vw;
+    padding: 18px 2vw 18px 2vw;
   }
   .auto-image {
-    max-width: 120px;
+    max-width: 140px;
   }
   .title {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
   }
-  .email-input-container {
+  ion-item.email-input-container {
+    max-width: 98vw;
     --min-height: 54px;
     border-radius: 10px;
-    padding: 0 2px;
   }
   .main-btn, .secondary-btn {
     font-size: 1rem;
     min-height: 40px;
+    width: 100%;
   }
   .info-text {
     font-size: 0.97rem;
