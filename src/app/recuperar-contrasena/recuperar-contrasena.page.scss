@@ -1,234 +1,104 @@
-.logo-image {
-  max-width: 50%;
-  height: auto;
-  object-fit: contain;
-  margin: 0 auto;
-}
-.container {
+// Estilos generales para la página
+.recover-page {
+  --background: #f4f8fb; // Fondo general de la página
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
 }
 
-.auto-image {
-  max-width: 350px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-.button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;   /* Espaciado entre botones */
-  margin-top: 20px; /* Ajusta el margen superior según lo necesites */
-}
-
-.logo-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 32px;
-  margin-bottom: 24px;
-}
-
-.email-input-container,
-ion-item.email-input-container,
-ion-item.email-input-container .item-native,
-ion-item.email-input-container .input-wrapper {
-  width: 90% !important;
-  max-width: 800px !important;
-  margin: 0 auto;
-  --min-height: 90px;
-  --padding-start: 0px;
-  --inner-padding-end: 0px;
-  --highlight-height: 2px;
-  --border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-ion-input, ion-label, input {
-  font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
-  font-size: 1.15rem;
-}
-
-ion-item.email-input-container {
-  width: 100% !important;
-  max-width: 700px !important;
-  margin: 0 auto;
-  --min-height: 90px;
-  --padding-start: 0px;
-  --inner-padding-end: 0px;
-  --highlight-height: 2px;
-  --border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 !important;
-}
-
-ion-input {
-  width: 100%;
-  font-size: 1.05rem;
-  min-height: 70px;
-  box-sizing: border-box;
-  word-break: break-all;
-  background: transparent;
-  text-align: center;
-}
-
-ion-item.email-input-container .input-wrapper {
-  width: 100% !important;
-}
-
-ion-input .label-floating.sc-ion-input-md, ion-input .label-floating.sc-ion-input-ios {
-  top: -12px !important;
-  left: 20px !important;
-  font-size: 1em !important;
-  background: #fff !important;
-  padding: 0 8px !important;
-  color: #1976d2 !important;
-  z-index: 10 !important;
-  max-width: 95%;
-  overflow: visible;
-  white-space: nowrap;
-  position: relative;
-}
-
-// Fondo general de la página
-.card-bg {
-  background: #f7f9fb;
-}
-
-// Card principal centrada y con sombra
+// Contenedor principal de la tarjeta de recuperación
 .recover-card {
-  max-width: 800px;
-  margin: 56px auto;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  padding: 40px 16px 32px 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 98vw;
-  min-width: 0;
+  background: #fff; // Fondo blanco
+  border-radius: 20px; // Radio del borde
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08); // Sombra
+  padding: 2rem; // Padding
+  display: flex; // Utiliza flexbox para el diseño
+  flex-direction: column; // Dirección de la columna
+  align-items: center; // Centra los elementos horizontalmente
+  width: 90%; // Ancho del 90% del viewport
+  max-width: 480px; // Ancho máximo para pantallas grandes
+  min-width: 0; // Ancho mínimo
+  margin: auto; // Centra la tarjeta
 }
 
-// Logo
+// Estilos para el contenedor del logo
 .logo-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 24px;
-}
-.auto-image {
-  max-width: 220px;
-  width: 100%;
-  height: auto;
-  display: block;
+  display: flex; // Utiliza flexbox para el diseño
+  justify-content: center; // Centra horizontalmente
+  align-items: center; // Centra verticalmente
+  margin-bottom: 1.5rem; // Margen inferior
 }
 
-// Título principal
+// Estilos para la imagen del logo
+.logo-image {
+  max-width: 70%; // Ancho máximo del logo
+  height: auto; // Altura automática para mantener la proporción
+  object-fit: contain; // Asegura que la imagen se ajuste al contenedor sin deformarse
+}
+
+// Estilos para el título principal
 .title {
-  text-align: center;
-  font-size: 1.7rem;
-  font-weight: 500;
-  margin-bottom: 28px;
-  color: #222;
-  font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  text-align: center; // Texto centrado
+  font-size: 1.5rem; // Tamaño de la fuente
+  font-weight: 500; // Peso de la fuente
+  margin-bottom: 2rem; // Margen inferior
+  color: #222; // Color del texto
+  font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', Arial, Helvetica, sans-serif; // Fuente
 }
 
-// Input de correo y su contenedor
+// Estilos para el contenedor del input de correo electrónico
+.email-input-container {
+  width: 100%; // Ancho del 100%
+  margin-bottom: 1.5rem; // Margen inferior
+}
+
 ion-item.email-input-container {
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto 22px auto;
-  --min-height: 90px;
-  --padding-start: 0px;
-  --inner-padding-end: 0px;
-  --highlight-height: 2px;
-  --border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  background: #f5f7fa;
+  --full-width: 100%;
+  --padding-start: 0;
+  --padding-end: 0;
+  border-radius: 12px;
+  background: #f6faff;
 }
+
+// Estilos para el input
 ion-input {
-  width: 100%;
-  font-size: 1.05rem;
-  min-height: 70px;
-  box-sizing: border-box;
-  word-break: break-all;
-  background: transparent;
-  text-align: center;
-}
-.minimal-input ion-label.center-label {
-  width: 100%;
-  text-align: center;
-  font-size: 1.5rem;
-  color: #1976d2 !important;
-  font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+  font-size: 1rem; // Tamaño de la fuente
+  --padding-start: 10px;
 }
 
-// Botón principal
+// Estilos para el botón principal
 .main-btn {
-  width: 300px;
-  margin-bottom: 20px;
-  font-size: 1.2rem;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  min-height: 52px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 1rem; // Separación entre botones
+  font-size: 1rem; // Tamaño de fuente
+  height: 48px; // Altura del botón
+  --border-radius: 24px; // Bordes redondeados
+  width: 100%; // Ancho del 100%
 }
 
-// Botón secundario (Inicio)
-.secondary-btn {
-  width: 100%;
-  margin-top: 22px;
-  font-size: 1.1rem;
-  min-height: 46px;
-}
-
-// Texto informativo
+// Estilos para el texto informativo
 .info-text {
-  text-align: center;
-  color: #555;
-  font-size: 1.1rem;
-  margin-bottom: 8px;
-  margin-top: 22px;
+  text-align: center; // Texto centrado
+  color: #555; // Color del texto
+  font-size: 0.9rem; // Tamaño de la fuente
+  margin-bottom: 1rem; // Margen inferior
+  margin-top: 1rem; // Margen superior
 }
 
-// Responsividad para móviles
+// Estilos para el botón secundario (Inicio)
+.secondary-btn {
+  width: 100%; // Ancho del 100%
+  margin-top: 1rem; // Margen superior
+  font-size: 0.9rem; // Tamaño de la fuente
+}
+
+// Media query para pantallas más pequeñas (móviles)
 @media (max-width: 600px) {
   .recover-card {
-    max-width: 99vw;
-    padding: 18px 2vw 18px 2vw;
+    width: 95%; // Reduce el ancho en pantallas pequeñas
+    padding: 1rem; // Reduce el padding
   }
-  .auto-image {
-    max-width: 140px;
-  }
-  .title {
-    font-size: 1.2rem;
-  }
-  ion-item.email-input-container {
-    max-width: 98vw;
-    --min-height: 54px;
-    border-radius: 10px;
-  }
-  .main-btn, .secondary-btn {
-    font-size: 1rem;
-    min-height: 40px;
-    width: 100%;
-  }
-  .info-text {
-    font-size: 0.97rem;
+  .logo-image {
+    max-width: 150px; // Reduce el tamaño del logo
   }
 }
