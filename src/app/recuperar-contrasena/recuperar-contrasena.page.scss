@@ -1,5 +1,5 @@
 .logo-image {
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
   object-fit: contain;
   margin: 0 auto;
@@ -11,8 +11,11 @@
 }
 
 .auto-image {
-  max-width: 100%;
+  max-width: 350px;
+  width: 100%;
   height: auto;
+  display: block;
+  margin: 0 auto;
 }
 .button-container {
   display: flex;
@@ -20,4 +23,168 @@
   align-items: center;
   gap: 10px;   /* Espaciado entre botones */
   margin-top: 20px; /* Ajusta el margen superior según lo necesites */
+}
+
+.logo-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
+.email-input-container {
+  max-width: 420px;
+  margin: 0 auto;
+  width: 100%;
+  font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+  --min-height: 64px;
+}
+
+ion-input, ion-label, input {
+  font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+  font-size: 1.15rem;
+}
+
+ion-item.email-input-container {
+  --padding-start: 0px;
+  --inner-padding-end: 0px;
+  --highlight-height: 2px;
+  --border-radius: 12px;
+}
+
+ion-input .label-floating.sc-ion-input-md, ion-input .label-floating.sc-ion-input-ios {
+  top: -12px !important;
+  left: 20px !important;
+  font-size: 1em !important;
+  background: #fff !important;
+  padding: 0 8px !important;
+  color: #1976d2 !important;
+  z-index: 10 !important;
+  max-width: 95%;
+  overflow: visible;
+  white-space: nowrap;
+  position: relative;
+}
+
+.card-bg {
+  background: #f7f9fb;
+}
+
+.recover-card {
+  max-width: 420px;
+  margin: 48px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 32px 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95vw;
+  min-width: 0;
+}
+
+.logo-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.auto-image {
+  max-width: 180px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 22px;
+  color: #222;
+  font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.email-input-container {
+  width: 100%;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  --background: #f5f7fa;
+  --min-height: 64px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  padding: 0 8px;
+}
+
+.minimal-input ion-label.center-label {
+  width: 100%;
+  text-align: center;
+  left: 0 !important;
+  right: 0 !important;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  color: #1976d2 !important;
+  font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+}
+
+ion-input, ion-label, input {
+  font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+}
+
+ion-input {
+  text-align: center;
+  font-size: 1.15rem;
+  min-height: 48px;
+  padding: 12px 0;
+}
+
+.main-btn {
+  width: 100%;
+  margin-bottom: 16px;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  min-height: 48px;
+}
+
+.secondary-btn {
+  width: 100%;
+  margin-top: 18px;
+  font-size: 1.05rem;
+  min-height: 44px;
+}
+
+.info-text {
+  text-align: center;
+  color: #555;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  margin-top: 18px;
+}
+
+@media (max-width: 600px) {
+  .recover-card {
+    max-width: 98vw;
+    padding: 18px 4vw 18px 4vw;
+  }
+  .auto-image {
+    max-width: 120px;
+  }
+  .title {
+    font-size: 1.15rem;
+  }
+  .email-input-container {
+    --min-height: 54px;
+    border-radius: 10px;
+    padding: 0 2px;
+  }
+  .main-btn, .secondary-btn {
+    font-size: 1rem;
+    min-height: 40px;
+  }
+  .info-text {
+    font-size: 0.97rem;
+  }
 }

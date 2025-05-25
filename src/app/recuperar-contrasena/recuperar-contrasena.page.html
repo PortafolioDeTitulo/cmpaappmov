@@ -1,34 +1,19 @@
-<ion-content [fullscreen]="true" class="ion-padding">
-  <!-- Imagen centrada debajo del encabezado -->
-  <div class="container text-center mt-4 d-flex justify-content-center align-items-center">
-    <img src="assets/img/Logo 2024 - Firma_azul 1.PNG" alt="Logo" class="img-fluid auto-image" />
+<ion-content [fullscreen]="true" class="ion-padding card-bg">
+  <div class="recover-card">
+    <div class="logo-center">
+      <img src="assets/img/Logo 2024 - Firma_azul 1.PNG" alt="Logo" class="auto-image" />
+    </div>
+    <h2 class="title">Recuperar Contraseña</h2>
+    <form (ngSubmit)="sendEmail()">
+      <ion-item class="email-input-container minimal-input">
+        <ion-label position="floating" class="center-label">Ingrese su Correo</ion-label>
+        <ion-input id="emailInput" type="email" placeholder="nombre.apellido@cmpuentealto.cl" [(ngModel)]="email" name="email" required></ion-input>
+      </ion-item>
+      <ion-button expand="block" class="main-btn" type="submit">Continuar</ion-button>
+    </form>
+    <div class="info-text">
+      <p>Se enviará un correo, el cual no debe responder, donde se le indicará la nueva contraseña para ingresar al sistema.<br>Si el correo supera los 2 días, comuníquese con: 22 - 1111 1111.</p>
+    </div>
+    <ion-button fill="outline" expand="block" class="secondary-btn" (click)="goTohomePage()">Inicio</ion-button>
   </div>
-
-  <ion-list class="ion-text-center">
-    <!-- Campo de correo electrónico -->
-    <ion-item>
-      <ion-input id="emailInput" type="email" label="Ingrese su Correo" placeholder="nombre.apellido@cmpuentealto.cl"
-        label-placement="floating" fill="outline" [(ngModel)]="email" required></ion-input>
-      <!-- Ícono de envío con evento -->
-      <ion-icon src="assets/icon/mail-sharp.svg" class="large-icon" slot="end"  (click)="sendEmail()"
-        color="primary"></ion-icon>
-    </ion-item>
-
-    <!-- Mensaje informativo -->
-    <ion-item>
-      <ion-label>
-        <p>Se enviará un correo, el cual no debe responder, donde se le indicará la nueva contraseña para ingresar al sistema.
-        Si el correo supera los 2 días, comuníquese con: 22 - 1111 1111.</p>
-      </ion-label>
-    </ion-item>
-
-    <!-- Botón para regresar a la página de inicio -->
-    <ion-item class="button-container">
-      <ion-button fill="outline" (click)="goTohomePage()">Inicio</ion-button>
-    </ion-item>
-
-    <!-- Alerta de confirmación -->
-    <ion-alert is-open="alertOpen" header="Correo Enviado"
-      message="Su contraseña será enviada en un plazo máximo de 2 días." buttons="['OK']"></ion-alert>
-  </ion-list>
 </ion-content>
