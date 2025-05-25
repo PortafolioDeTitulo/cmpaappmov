@@ -1,0 +1,76 @@
+/* Centrado de contenido */
+.form-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  /* Estilo del logo */
+  .logo-image {
+    max-height: 120px;
+    width: auto;
+    margin: 16px auto;
+    display: block;
+  }
+  
+  /* Alineación centrada del título */
+  .text-center {
+    text-align: center;
+  }
+  
+  /* Espaciado general entre tarjetas */
+  ion-item {
+    margin-bottom: 12px;
+    border-radius: 8px;
+    --padding-start: 16px;
+    --padding-end: 16px;
+    background: #f8f9fa;
+  }
+  
+  /* Botones con separación clara */
+  ion-button {
+    margin-left: 8px;
+  }
+  
+  /* Reglas responsive */
+  @media screen and (max-width: 768px) {
+    .form-wrapper {
+      padding: 8px;
+    }
+  
+    .logo-image {
+      max-height: 90px;
+    }
+  
+    ion-title {
+      font-size: 18px;
+    }
+  
+    ion-item h2 {
+      font-size: 16px;
+    }
+  
+    ion-item p {
+      font-size: 14px;
+    }
+  
+    ion-button {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    ion-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    ion-button {
+      width: 100%;
+      margin: 6px 0;
+    }
+  }

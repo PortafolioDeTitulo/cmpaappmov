@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="text-center">
+      <img src="assets/img/Logo 2024 - Firma_azul 1.PNG" alt="Logo" class="logo-image"> 
+    </ion-title>
+    <!-- Icono de sesión en la esquina superior derecha -->
+    <ion-buttons slot="end">
+      <ion-button (click)="goToLoginPage()">
+        <a routerLink="loginPage" class="icon-link">
+          <ion-icon name="person" size="large"></ion-icon>
+        </a>
+        <ion-icon  (click)="goToLoginPage()"></ion-icon>
+       <!--<ion-icon src="assets/icon/person.svg" class="large-icon"></ion-icon>
+         <span class="ms-3"></span>-->
+        <!--<ion-icon name="person"></ion-icon>-->
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- Imagen centrada debajo del encabezado -->
+  <div class="container text-center mt-4 d-flex justify-content-center align-items-center">
+    <img src="assets/img/auto_centro.png" alt="Auto" class="img-fluid auto-image">
+  </div>
+
+  <!-- Texto debajo de la imagen -->
+  <div class="container text-center mt-4 d-flex justify-content-center align-items-center">
+    <p>Viaja con nosotros Viaja con la Corpo</p>
+  </div>
+</ion-content>
