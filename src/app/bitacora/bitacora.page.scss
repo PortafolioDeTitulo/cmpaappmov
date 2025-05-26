@@ -1,0 +1,101 @@
+// Contenedor principal
+.bitacora-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f4f8fb;
+}
+
+// Wrapper principal
+.bitacora-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 480px;
+  margin: auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+// Imagen del logo
+.corporacion-image {
+  max-width: 400px;
+  
+  height: auto;
+  margin-bottom: 2rem;
+  object-fit: contain;
+}
+
+// Contenedor de búsqueda
+.search-container {
+  width: 100%;
+  margin-bottom: 1.5rem;
+
+  .custom-searchbar {
+    --border-radius: 12px;
+    --background: #f6faff;
+    --color: #333;
+    --placeholder-color: #666;
+    --icon-color: #1976d2;
+    --box-shadow: none;
+  }
+}
+
+// Lista de registros
+.bitacora-list {
+  width: 100%;
+  margin-bottom: 1.5rem;
+
+  ion-item {
+    --border-radius: 12px;
+    --padding-start: 1rem;
+    --padding-end: 1rem;
+    margin-bottom: 0.5rem;
+    
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #333;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+  }
+}
+
+// Contenedor de botones
+.button-container {
+  width: 100%;
+  margin-top: 1rem;
+
+  ion-button {
+    margin: 0;
+    height: 48px;
+    font-size: 1rem;
+    --border-radius: 4px;
+  }
+}
+
+// Media queries para responsividad
+@media (max-width: 600px) {
+  .bitacora-wrapper {
+    max-width: 95%;
+    padding: 1.5rem;
+  }
+
+  .corporacion-image {
+    max-width: 300px;
+  }
+
+  .button-container ion-button {
+    font-size: 0.9rem;
+    height: 44px;
+  }
+}

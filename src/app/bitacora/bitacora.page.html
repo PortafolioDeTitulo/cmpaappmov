@@ -19,39 +19,47 @@
 
   <!-- CONTENIDO PRINCIPAL -->
   <div class="ion-page" id="main-content">
-    <ion-header>
+    <ion-header [translucent]="true">
       <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>
-        <ion-title>Gestión de Vehículos</ion-title>
+        <ion-title>Bitácora de Vehículos</ion-title>
       </ion-toolbar>
     </ion-header>
-    
-    <ion-content [fullscreen]="true" class="ion-padding">
-  <!-- Imagen centrada debajo del encabezado -->
-  <div class="container text-center mt-4 d-flex justify-content-center align-items-center">
-    <img src="assets/img/Logo 2024 - Firma_azul 1.PNG" alt="Logo" class="img-fluid auto-image" />
+
+    <ion-content [fullscreen]="true" class="ion-padding bitacora-content">
+      <div class="bitacora-wrapper">
+        <!-- Logo de la Corporación -->
+        <img src="assets/img/Logo 2024 - Firma_azul 1.PNG" 
+             alt="Logo Corporación Municipal" 
+             class="corporacion-image">
+
+        <!-- Barra de búsqueda -->
+        <div class="search-container">
+          <ion-searchbar search-icon="search-circle" 
+                         placeholder="Buscar registro"
+                         class="custom-searchbar">
+          </ion-searchbar>
+        </div>
+
+        <!-- Lista de registros -->
+        <ion-list class="bitacora-list">
+          <!-- Aquí irán los registros de la bitácora -->
+          <ion-item>
+            <ion-label>
+              <h2>Ejemplo de registro</h2>
+              <p>Detalles del registro</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+
+        <!-- Contenedor de botones -->
+        <div class="button-container">
+          <ion-button expand="block" 
+                      shape="round" 
+                      fill="outline" 
+                      (click)="goToHomePage()">
+            Volver al Inicio
+          </ion-button>
+        </div>
+      </div>
+    </ion-content>
   </div>
-
-  <ion-list class="ion-text-center">
-    <!-- Campo de busqueda del movil -->
-    
-<ion-searchbar search-icon="search-circle" placeholder="Custom Search Icon"></ion-searchbar>
-
-    <!-- Mensaje informativo -->
-    <ion-item>
-      <ion-label>
-        <p>Se debe modificar, hay que investigar como poder hacer la extraccion, esta vista debe ir 
-          al ultimo, para poder hacer la extraccion de la informacion de la bitacora.
-        </p>
-      </ion-label>
-    </ion-item>
-
-    <!-- Botón para regresar a la página de inicio -->
-    <ion-item class="button-container">
-      <ion-button fill="outline" >Inicio</ion-button>
-    </ion-item>
-
-  </ion-list>
-</ion-content>
