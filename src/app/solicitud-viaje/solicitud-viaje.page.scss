@@ -27,10 +27,11 @@ form {
 
   // Logo
   .logo-image {
+    display: block;
     max-width: 400px;
     width: 100%;
     height: auto;
-    margin: 0 auto 2rem;
+    margin: 0 auto 2rem auto;
     object-fit: contain;
   }
 
@@ -39,7 +40,7 @@ form {
     font-size: 1rem;
     color: #666;
     text-align: center;
-    margin-bottom: 2rem;
+    margin: 0 0 2rem 0;
     line-height: 1.5;
     font-family: sans-serif;
   }
