@@ -68,3 +68,70 @@ ion-col[size="12"] {
   
     box-shadow: 4px 0px 16px rgba(0, 68, 255, 0.733);
   }
+
+  // Contenedor principal de la página
+.registro-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f4f8fb; // Fondo general
+}
+
+// Contenedor principal que agrupa todos los elementos
+.registro-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 480px; // Ancho máximo para pantallas grandes
+  margin: auto; // Esto ayuda al centrado
+  padding: 2rem; // Espaciado interno
+  background: #fff; // Fondo blanco
+  border-radius: 16px; // Bordes redondeados
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); // Sombra para destacar el contenedor
+  position: relative; // Para el eje Z
+  z-index: 1; // Asegura que esté por encima de otros elementos
+}
+
+// Imagen del logo de la Corporación Municipal
+.corporacion-image {
+  max-width: 400px; /* Ajusta el tamaño máximo */
+  height: auto;
+  margin: 0 auto 1.5rem; /* Centra horizontalmente y agrega margen inferior */
+  object-fit: contain; /* Asegura que la imagen mantenga sus proporciones */
+  align-items: center;
+}
+
+// Lista de inputs del formulario
+.registro-list {
+  width: 100%; // Ocupa todo el ancho del contenedor
+  display: flex;
+  flex-direction: column; // Coloca los inputs en columna
+}
+
+// Estilo para cada input del formulario
+.registro-item {
+  border-radius: 12px; // Bordes redondeados
+  margin-bottom: 1rem; // Separación entre inputs
+}
+
+// Botones de acción
+.button-container ion-button {
+  margin-top: 1rem; // Separación entre botones
+  font-size: 1.1rem; // Tamaño de fuente
+  height: 48px; // Altura del botón
+  --border-radius: 24px; // Bordes redondeados
+}
+
+// Media query para pantallas pequeñas
+@media (max-width: 600px) {
+  .registro-wrapper {
+    max-width: 95%; // Reduce el ancho en pantallas pequeñas
+    padding: 1.5rem; // Reduce el padding
+    margin: auto; // Mantiene el centrado en móviles
+  }
+  .corporacion-image {
+    max-width: 250px; // Reduce el tamaño de las imágenes
+  }
+}
