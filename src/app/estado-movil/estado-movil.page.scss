@@ -7,3 +7,117 @@ ion-menu::part(backdrop) {
   
     box-shadow: 4px 0px 16px rgb(4, 0, 255);
   }
+
+// Contenedor principal
+.estado-content {
+  --background: #f4f8fb;
+  
+  // Wrapper principal
+  .estado-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  // Grid de vehículos
+  .vehicles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem 0;
+
+    .vehicle-card {
+      margin: 0;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      background: #fff;
+
+      ion-card-header {
+        padding: 1rem;
+
+        ion-card-title {
+          font-size: 1.2rem;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+        }
+
+        ion-card-subtitle {
+          font-size: 1rem;
+          margin-top: 0.25rem;
+        }
+      }
+
+      ion-card-content {
+        padding: 1rem;
+
+        ion-item {
+          --padding-start: 0;
+          --padding-end: 0;
+          --inner-padding-end: 0;
+
+          ion-thumbnail {
+            width: 80px;
+            height: 80px;
+            margin-right: 1rem;
+            
+            img {
+              border-radius: 8px;
+              object-fit: cover;
+            }
+          }
+        }
+
+        .button-container {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          width: 100%;
+
+          ion-button {
+            margin: 0;
+            height: 36px;
+            font-size: 0.9rem;
+            --border-radius: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Media queries
+@media (max-width: 600px) {
+  .estado-content {
+    .vehicles-grid {
+      grid-template-columns: 1fr;
+      padding: 0.5rem;
+      
+      .vehicle-card {
+        ion-card-header {
+          padding: 0.8rem;
+          
+          ion-card-title {
+            font-size: 1.1rem;
+          }
+          
+          ion-card-subtitle {
+            font-size: 0.9rem;
+          }
+        }
+
+        ion-card-content {
+          padding: 0.8rem;
+
+          ion-thumbnail {
+            width: 60px;
+            height: 60px;
+          }
+        }
+      }
+    }
+  }
+}

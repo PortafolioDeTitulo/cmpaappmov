@@ -1,57 +1,89 @@
-import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'; // Importar Router para navegación
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonApp, InfiniteScrollCustomEvent, IonInfiniteScroll, 
-  IonInfiniteScrollContent, IonButtons, IonContent, IonHeader, IonMenu, 
-  IonMenuButton, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonicModule } from '@ionic/angular';
+
+// Interfaz para definir la estructura de un vehículo
+interface Vehiculo {
+  titulo: string; // Título del vehículo
+  estado: string; // Estado actual del vehículo
+  lugar: string; // Ubicación del vehículo
+  imagen: string; // Ruta de la imagen del vehículo
+}
 
 @Component({
   selector: 'app-estado-movil',
   templateUrl: './estado-movil.page.html',
   styleUrls: ['./estado-movil.page.scss'],
   standalone: true,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [IonApp, IonInfiniteScroll, IonInfiniteScrollContent, 
-            IonButtons, IonContent, IonHeader, IonMenu, IonMenuButton, 
-            IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [CommonModule, IonicModule]
 })
 export class EstadoMovilPage implements OnInit {
-  vehiculos: any[] = [];
-  maxVehiculos = 50; // Máximo de vehículos a cargar
-  loadedVehiculos = 0; // Contador de vehículos cargados
+  // Lista de vehículos que se mostrarán en la página
+  vehiculos: Vehiculo[] = [
+    {
+      titulo: 'Vehículo 1',
+      estado: 'Disponible',
+      lugar: 'Estacionamiento A',
+      imagen: 'assets/img/vehiculo1.jpg'
+    },
+    {
+      titulo: 'Vehículo 2',
+      estado: 'En uso',
+      lugar: 'Ruta 5',
+      imagen: 'assets/img/vehiculo2.jpg'
+    },
+    {
+      titulo: 'Vehículo 3',
+      estado: 'Mantenimiento',
+      lugar: 'Taller',
+      imagen: 'assets/img/vehiculo3.jpg'
+    }
+    // Puedes agregar más vehículos aquí
+  ];
 
-  constructor() {}
+  constructor(private router: Router) { } // Inyectar el servicio Router para navegación
 
   ngOnInit() {
-    this.loadMoreVehicles(5); // Cargar los primeros 5 vehículos
+    // Método que se ejecuta al inicializar el componente
   }
 
-  private loadMoreVehicles(count: number = 5) {
-    const newVehicles = [];
-    for (let i = 0; i < count && this.loadedVehiculos < this.maxVehiculos; i++) {
-      this.loadedVehiculos++;
-      newVehicles.push({
-        titulo: `Vehículo ${this.loadedVehiculos}`,
-        estado: ['Disponible', 'Ocupado', 'Fuera de Servicio'][Math.floor(Math.random() * 3)],
-        lugar: `Estación ${Math.floor(Math.random() * 10) + 1}`,
-        imagen: `assets/img/vehiculo${(this.loadedVehiculos % 3) + 1}.jpg`
-      });
+  // Método para obtener el color del estado del vehículo
+  getStatusColor(estado: string): string {
+    switch (estado.toLowerCase()) {
+      case 'disponible': return 'success'; // Verde para disponible
+      case 'en uso': return 'warning'; // Amarillo para en uso
+      case 'mantenimiento': return 'danger'; // Rojo para mantenimiento
+      default: return 'medium'; // Gris para estados desconocidos
     }
-    this.vehiculos = [...this.vehiculos, ...newVehicles];
   }
 
-  onIonInfinite(event: InfiniteScrollCustomEvent) {
+  // Método para identificar cada vehículo en la lista (para mejorar el rendimiento)
+  trackByFn(index: number, item: Vehiculo): string {
+    return item.titulo; // Usar el título como identificador único
+  }
+
+  // Método para manejar el evento de scroll infinito
+  onIonInfinite(event: any) {
     setTimeout(() => {
-      if (this.loadedVehiculos >= this.maxVehiculos) {
-        event.target.disabled = true; // Deshabilita el scroll si no hay más vehículos
-      } else {
-        this.loadMoreVehicles(5);
-      }
-      event.target.complete();
-    }, 1000);
+      event.target.complete(); // Finalizar el evento de scroll infinito
+    }, 500);
   }
 
-  trackByFn(index: number, item: any): number {
-    return index;
+  // Método para manejar el botón "Detalles"
+  goToDetalles(vehiculo: Vehiculo) {
+    console.log('Detalles del vehículo:', vehiculo); // Aquí puedes implementar la lógica para mostrar detalles
+    this.router.navigate(['/detalles', vehiculo.titulo]); // Navegar a una página de detalles (ejemplo)
+  }
+
+  // Método para manejar el botón "Cancelar Viajes"
+  cancelarViajes(vehiculo: Vehiculo) {
+    console.log('Cancelar viajes para el vehículo:', vehiculo); // Aquí puedes implementar la lógica para cancelar viajes
+    alert(`Viajes del vehículo "${vehiculo.titulo}" han sido cancelados.`);
+  }
+
+  // Método para manejar la navegación de la barra lateral
+  navigateTo(route: string) {
+    this.router.navigate([route]); // Navegar a la ruta especificada
   }
 }
