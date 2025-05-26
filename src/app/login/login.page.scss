@@ -1,3 +1,12 @@
+// Contenedor principal de la página
+.login-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f4f8fb;
+}
+
 // Contenedor principal que agrupa todos los elementos
 .login-wrapper {
   display: flex;
@@ -5,11 +14,13 @@
   align-items: center;
   justify-content: center;
   max-width: 480px; // Ancho máximo para pantallas grandes
-  margin: 0 auto; // Centrado horizontal
+  margin: auto; // Esto ayuda al centrado
   padding: 2rem; // Espaciado interno
   background: #fff; // Fondo blanco
   border-radius: 16px; // Bordes redondeados
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); // Sombra para destacar el contenedor
+  position: relative; // Para el eje Z
+  z-index: 1; // Asegura que esté por encima de otros elementos
 }
 
 // Imagen del logo de la Corporación Municipal
@@ -23,38 +34,41 @@
 
 // Imagen decorativa del auto
 .auto-image {
-  max-width: 140px; // Tamaño máximo
+  max-width: 200px; // Tamaño máximo
   height: auto;
   margin-bottom: 2rem; // Separación inferior
 }
 
 // Lista de inputs del formulario
 .login-list {
-  width: 100%; // Ocupa todo el ancho del contenedor
+  width: 110%; // Ocupa todo el ancho del contenedor
+  display: flex;
+  flex-direction: column; // Coloca los inputs en columna
 }
 
 // Estilo para cada input del formulario
 .login-item {
   border-radius: 12px; // Bordes redondeados
-  margin-bottom: 1.5rem; // Separación entre inputs
-  background: #f6faff; // Fondo claro
+  margin-bottom: 1rem; // Separación entre inputs
+  
 }
 
 // Botones de acción
 .button-container ion-button {
   margin-top: 1rem; // Separación entre botones
   font-size: 1.1rem; // Tamaño de fuente
-  height: 48px; // Altura del botón
-  --border-radius: 24px; // Bordes redondeados
+  height: 20px; // Altura del botón
+  --border-radius: 2px; // Bordes redondeados
 }
 
-// Estilo responsive para pantallas pequeñas
+// Media query para pantallas pequeñas
 @media (max-width: 600px) {
   .login-wrapper {
     max-width: 95%; // Reduce el ancho en pantallas pequeñas
     padding: 1.5rem; // Reduce el padding
+    margin: auto; // Mantiene el centrado en móviles
   }
   .corporacion-image, .auto-image {
-    max-width: 120px; // Reduce el tamaño de las imágenes
+    max-width: 250px; // Reduce el tamaño de las imágenes
   }
 }
