@@ -145,30 +145,54 @@ export class RegistroUsuarioPage implements OnInit {
       return;
     }
   
-  
     const form = this.registroForm.value;
 
-    const nuevoUsuario = {
+    // Payload for the API, using 'password' for the raw password field as expected by NuevoUsuarioAPI
+    const nuevoUsuarioPayload = {
       rut: form.rut,
-      usuario: `${form.nombre} ${form.apellidoPaterno}`,
-      contraseña: form.contraseña, 
-      nombre: form.nombre,
+      username: form.correo, // Use correo as username for API logic in service
+      password: form.contrasena, // Raw password, to be sent as 'password' by the service
+      nombre: form.nombre, // Backend 'nombre' field
       rol: form.cargo,
-      correo: form.correo,
+      correo: form.correo, // Original correo
       centro: form.centro,
       areaDesempeno: form.areaDesempeno,
       departamento: form.departamento
-      
     };
 
-    const registrado = await this.autentificacionUsuario.registrarUsuarioLocal(nuevoUsuario);
-
-    if (registrado) {
-      this.mostrarToast('Usuario registrado con éxito', 'success');
-      this.registroForm.reset();
-      this.router.navigate(['/login']);
+    if (navigator.onLine) {
+      this.autentificacionUsuario.registrarUsuarioAPI(nuevoUsuarioPayload).subscribe({
+        next: (res: any) => {
+          this.mostrarToast('Usuario registrado con éxito en el servidor.', 'success');
+          this.registroForm.reset();
+          this.router.navigate(['/login']);
+        },
+        error: (err: any) => {
+          console.error('Error en registro API:', err);
+          this.mostrarToast(err.error?.message || 'Error al registrar usuario en el servidor.', 'danger');
+        }
+      });
     } else {
-      this.mostrarToast('El RUT ya está registrado.', 'danger');
+      // For local registration, create an object matching UsuarioSimulado
+      // Note: UsuarioSimulado doesn't include centro, areaDesempeno, departamento.
+      const usuarioLocal = {
+        rut: form.rut,
+        usuario: form.correo, // Using form.correo for 'usuario' field in UsuarioSimulado
+        contraseña: form.contrasena, // Storing plain password locally
+        nombre: form.nombre,
+        rol: form.cargo,
+        correo: form.correo
+      };
+
+      // The registrarUsuarioLocal method expects UsuarioSimulado type.
+      const registrado = await this.autentificacionUsuario.registrarUsuarioLocal(usuarioLocal as any);
+      if (registrado) {
+        this.mostrarToast('Usuario registrado localmente (sin conexión).', 'success');
+        this.registroForm.reset();
+        this.router.navigate(['/login']);
+      } else {
+        this.mostrarToast('El RUT o correo ya está registrado localmente.', 'danger');
+      }
     }
   }
 
