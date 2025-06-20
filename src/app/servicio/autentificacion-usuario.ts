@@ -13,6 +13,19 @@ interface UsuarioSimulado {
   rol: 'adminSistema' | 'conductor' | 'its' | 'solicitante' | 'coordinador';
   correo: string;
 }
+
+// Interface for the new user data to be sent to the API
+interface NuevoUsuarioAPI {
+  rut: string;
+  username: string; // This will be the email/correo
+  password: string; // Raw password, backend will hash
+  nombre: string;
+  rol: 'adminSistema' | 'conductor' | 'its' | 'solicitante' | 'coordinador';
+  correo: string;
+  centro?: string;
+  areaDesempeno?: string;
+  departamento?: string;
+}
   
   @Injectable({
     providedIn: 'root'
@@ -83,12 +96,21 @@ interface UsuarioSimulado {
 
 
   //  REGISTRO online (API)
-  registrarUsuarioAPI(usuario: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/register`, {
-      username: usuario.correo,
-      password: usuario.contraseña,
-      rol: usuario.rol
-    });
+  registrarUsuarioAPI(usuario: NuevoUsuarioAPI): Observable<any> {
+    // The backend expects 'password' for the raw password, and 'username' for the login identifier.
+    // All other fields from NuevoUsuarioAPI are passed through.
+    const payload = {
+      username: usuario.username, // This is the correo
+      password: usuario.password, // Sending raw password, backend will hash
+      rol: usuario.rol,
+      nombre: usuario.nombre,
+      rut: usuario.rut,
+      correo: usuario.correo, // Keep original correo field as well
+      centro: usuario.centro,
+      areaDesempeno: usuario.areaDesempeno,
+      departamento: usuario.departamento
+    };
+    return this.http.post(`${this.apiUrl}/register`, payload);
   }
 
   async logout(): Promise<void> {
